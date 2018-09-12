@@ -9,9 +9,9 @@
   ],
   "scripts": {
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "build": "npm run build-lib && npm run build-storybook",
+    "build": "npm run build-storybook",
     "build-lib": "tsc && npm run copy-css-to-lib",
-    "build-storybook": "build-storybook -s public -o .out",
+    "build-storybook": "npm run build-lib && build-storybook -s public -o .out",
     "deploy-storybook": "storybook-to-ghpages",
     "copy-css-to-lib": "cpx \"./src/**/*.css\" ./build/lib"
   },
